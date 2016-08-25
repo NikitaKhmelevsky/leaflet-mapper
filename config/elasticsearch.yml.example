@@ -1,0 +1,19 @@
+development:
+  url: 'http://localhost:9200'
+  number_of_shards: 1
+  number_of_replicas: 0
+
+test:
+  url: 'http://elasticsearch:9200'
+  number_of_shards: 1
+  number_of_replicas: 0
+
+staging:
+  url: 'http://localhost:9200'
+  number_of_shards: 5
+  number_of_replicas: 0
+
+prodcution:
+  url: 'http://localhost:9200'
+  number_of_shards: 5
+  number_of_replicas: 0

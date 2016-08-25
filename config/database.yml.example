@@ -1,0 +1,17 @@
+common: &common
+  adapter: postgresql
+  encoding: utf8
+  username: user
+  password:
+
+development:
+  <<: *common
+  database: mapper_dev
+
+test:
+  <<: *common
+  database: mapper_test
+
+production:
+  <<: *common
+  database: mapper_dev
