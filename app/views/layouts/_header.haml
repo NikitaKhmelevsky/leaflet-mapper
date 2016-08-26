@@ -1,0 +1,27 @@
+%nav.navbar.navbar-inverse#header
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'JetRuby Mapper', root_path, class: 'navbar-brand', id: 'header-title'
+    #navbar.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.dropdown#dropdown
+          %a#static-pages.dropdown-toggle#dropdown-title{ href: "#", "aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+            Menu
+            %span.caret
+          %ul.dropdown-menu{"aria-labelledby" => "static-pages"}
+            %li.dropdown-header Dropdown header
+            %li
+              %a{:href => "#"} Action
+            %li
+              %a{:href => "#"} Another action
+            %li
+              %a{:href => "#"} Something else here
+            %li.divider{:role => "separator"}
+            %li.dropdown-header Hardcore
+            %li
+              = link_to 'Real word example', hardcore_map_path

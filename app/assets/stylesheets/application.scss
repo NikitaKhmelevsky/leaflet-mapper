@@ -12,4 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require leaflet
+ *= require leaflet.markercluster
+ *= require Leaflet.awesome-markers
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "map";

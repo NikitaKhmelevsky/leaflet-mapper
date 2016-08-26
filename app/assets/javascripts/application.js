@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require bootstrap-sprockets
+//= require js-cookie
+//= require lodash
+//= require leaflet
+//= require leaflet.markercluster
+//= require Leaflet.awesome-markers
+
+//= require node-geohash.js
+
+//= require maps/hardcore_map
+
+//= require maps_init

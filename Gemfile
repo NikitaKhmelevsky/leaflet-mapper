@@ -23,12 +23,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'lodash-rails'
 
+gem 'faker'
+
 source 'https://rails-assets.org' do
+  gem 'rails-assets-js-cookie'
   gem 'rails-assets-leaflet'
   gem 'rails-assets-leaflet.markercluster', '0.4.0.hotfix.1'
+  gem 'rails-assets-Leaflet.awesome-markers'
+
 end
 
 # Elasticsearch
+gem 'elasticsearch-rails'
 gem 'elasticsearch-model'
 
 group :development, :test do
