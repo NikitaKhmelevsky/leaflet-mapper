@@ -170,11 +170,13 @@
     self.singleMarkerIconConstructor = function() {
       var width = 28;
 
-      return new L.DivIcon({
-        iconSize: [width, width],
-        html: '<div class="cluster" style="text-align:center;border-radius: 50%;width:' + width + 'px;height:' + width + 'px;line-height:' + width + 'px;color: white;background-color: #9d9d9d">1</div>',
-        className: 'cluster-icon'
-      });
+      return new L.Icon.Default();
+
+      // return new L.DivIcon({
+      //   iconSize: [width, width],
+      //   html: '<div class="cluster" style="text-align:center;border-radius: 50%;width:' + width + 'px;height:' + width + 'px;line-height:' + width + 'px;color: white;background-color: #9d9d9d">1</div>',
+      //   className: 'cluster-icon'
+      // });
     };
 
     self.simpleClusterIconConstructor = function(markersCount) {

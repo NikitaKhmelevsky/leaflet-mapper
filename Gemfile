@@ -25,9 +25,10 @@ gem 'lodash-rails'
 
 gem 'faker'
 
+gem 'leaflet-rails'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-js-cookie'
-  gem 'rails-assets-leaflet'
   gem 'rails-assets-leaflet.markercluster', '0.4.0.hotfix.1'
   gem 'rails-assets-Leaflet.awesome-markers'
 

@@ -6,4 +6,12 @@ class StaticPagesController < ApplicationController
   def hardcore_map
     
   end
+
+  def spiderfy_issue
+    
+  end
+
+  def super_simple
+    
+  end
 end

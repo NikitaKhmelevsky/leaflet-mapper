@@ -91,6 +91,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
+    leaflet-rails (0.7.7)
     lodash-rails (4.14.1)
       railties (>= 3.1)
     loofah (2.0.3)
@@ -189,12 +190,12 @@ DEPENDENCIES
   jbuilder (~> 2.6)
   jquery-rails
   jquery-ui-rails
+  leaflet-rails
   lodash-rails
   pg
   rails (= 5.0.0.1)
   rails-assets-Leaflet.awesome-markers!
   rails-assets-js-cookie!
-  rails-assets-leaflet!
   rails-assets-leaflet.markercluster (= 0.4.0.hotfix.1)!
   sass-rails
   sdoc (~> 0.4.0)

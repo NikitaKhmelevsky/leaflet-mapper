@@ -14,13 +14,14 @@
             Menu
             %span.caret
           %ul.dropdown-menu{"aria-labelledby" => "static-pages"}
-            %li.dropdown-header Dropdown header
+            %li.dropdown-header Simple stuff
+
             %li
-              %a{:href => "#"} Action
+              = link_to 'Super simple', super_simple_path
+
             %li
-              %a{:href => "#"} Another action
-            %li
-              %a{:href => "#"} Something else here
+              = link_to 'Spiderfy issue and popups', spiderfy_issue_path
+
             %li.divider{:role => "separator"}
             %li.dropdown-header Hardcore
             %li

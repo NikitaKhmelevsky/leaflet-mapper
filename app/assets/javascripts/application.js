@@ -22,5 +22,7 @@
 //= require node-geohash.js
 
 //= require maps/hardcore_map
+//= require maps/spiderfy_issue_map
+//= require maps/super_simple
 
 //= require maps_init
