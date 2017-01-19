@@ -28,48 +28,88 @@ class ClustersAggregator
     self.class.instance_variable_get(:@document_type)
   end
 
+  # elastcisearch < 5.0
+  # def search_params
+  #   { search_type: 'count',
+  #     index: index_name,
+  #     type:  document_type,
+  #     query_cache: true,
+  #     body: query }
+  # end
+  #
+  # def query
+  #   {
+  #     query: {
+  #       filtered: {
+  #         filter: {
+  #           bool: {
+  #             must: [
+  #               {
+  #                 geo_bounding_box: {
+  #                   location: {
+  #                     top_left: {
+  #                       lat: bounds['top_left']['lat'],
+  #                       lon: bounds['top_left']['lng']
+  #                     },
+  #                     bottom_right: {
+  #                       lat: bounds['bottom_right']['lat'],
+  #                       lon: bounds['bottom_right']['lng']
+  #                     }
+  #                   }
+  #                 }
+  #               }
+  #             ]
+  #           }
+  #         }
+  #       }
+  #     },
+  #     aggs: {
+  #       grid: {
+  #         geohash_grid: {
+  #           field: 'location',
+  #           precision: zoom,
+  #         }
+  #       }
+  #     }
+  #   }
+  # end
+
+  # elasticsearch >= 5.0
   def search_params
-    { search_type: 'count',
-      index: index_name,
+    { index: index_name,
       type:  document_type,
-      query_cache: true,
       body: query }
   end
 
   def query
     {
-      query: {
-        filtered: {
-          filter: {
+        query: {
             bool: {
-              must: [
-                {
-                  geo_bounding_box: {
-                    location: {
-                      top_left: {
-                        lat: bounds['top_left']['lat'],
-                        lon: bounds['top_left']['lng']
-                      },
-                      bottom_right: {
-                        lat: bounds['bottom_right']['lat'],
-                        lon: bounds['bottom_right']['lng']
-                      }
+                filter: {
+                    geo_bounding_box: {
+                        location: {
+                            top_left: {
+                                lat: bounds['top_left']['lat'],
+                                lon: bounds['top_left']['lng']
+                            },
+                            bottom_right: {
+                                lat: bounds['bottom_right']['lat'],
+                                lon: bounds['bottom_right']['lng']
+                            }
+                        }
                     }
-                  }
                 }
-              ]
             }
-          }
-        }
-      },
-      aggs: {
-        grid: {
-          geohash_grid: {
-            field: 'location',
-            precision: zoom,
-          }
-        }
-      }
+        },
+        aggs: {
+            grid: {
+                geohash_grid: {
+                    field: 'location',
+                    precision: zoom,
+                }
+            }
+        },
+        size: 0
     }
   end
 
