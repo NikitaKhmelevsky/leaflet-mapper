@@ -39,6 +39,22 @@
           self.updateMarkers();
         })
       ;
+
+      // var latlngs = [
+      //   [65.0390625, -14.1943359375], //bottom left
+      //   [65.0830078125, -14.1943359375], //top left
+      //   [65.0830078125, -14.150390625], //top right
+      //   [65.0390625, -14.150390625] //bottom right
+      // ];
+      // var polygon = L.polygon(latlngs, {color: 'red'}).addTo(self.map);
+      //
+      // var latlngs_2 = [
+      //   [65.0775146484375, -14.183349609375], //bottom left
+      //   [65.0830078125, -14.183349609375], //top left
+      //   [65.0830078125, -14.17236328125], //top right
+      //   [65.0775146484375, -14.17236328125] //bottom right
+      // ];
+      // var polygon_2 = L.polygon(latlngs_2, {color: 'green'}).addTo(self.map);
     };
 
     self.defineCenter = function() {
@@ -228,7 +244,7 @@
           zoom: self.defineElasticsearchZoom()
         },
         function(data) {
-          console.log(data);
+          // console.log(data);
           self.markersData = data.aggregations.grid.buckets;
         }
       )
